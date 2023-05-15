@@ -109,6 +109,14 @@ class ParticipantService
     {
         DB::beginTransaction();
         try {
+            $exists = $this->participantInterface->findParticipant($id, 0);
+            if (!$exists) {
+                return [
+                    'success' => false,
+                    'data'    => "Not Found",
+                    'code'    => 404,
+                ];
+            }
             /* UPDATE DATA PARTICIPANT */
             $this->participantInterface->updateParticipant($id, $data);
 
@@ -143,13 +151,15 @@ class ParticipantService
             DB::commit();
             return [
                 'success' => true,
-                'data'   => 'Data Updated Successfully'
+                'data'   => 'Data Updated Successfully',
+                'code'    => 200,
             ];
         } catch (\Exception $err) {
             DB::rollBack();
             return [
-                'success' => true,
-                'data'   => $err->getMessage()
+                'success' => false,
+                'data'   => $err->getMessage(),
+                'code'    => 500,
             ];
         }
     }

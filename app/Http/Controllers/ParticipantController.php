@@ -77,7 +77,7 @@ class ParticipantController extends BaseController
         $input = $request->all();
         $data = $this->services->updateParticipant($id, $input);
         if(!$data['success']) {
-            return $this->sendError('Failed', $data['data']);
+            return $this->sendError('Failed', $data['data'], $data['code']);
         }
         return $this->sendResponse('Success', $data['data']);
     }
