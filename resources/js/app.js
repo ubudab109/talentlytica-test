@@ -64,7 +64,7 @@ Vue.mixin({
 new Vue({
     metaInfo: {
         titleTemplate: (title) =>
-            title ? `${title} - Khalilvaai` : "Khalilvaai",
+            title ? `${title}` - 'Test' : "Talentlytica-Fullstack-Test",
     },
     store,
     router,
