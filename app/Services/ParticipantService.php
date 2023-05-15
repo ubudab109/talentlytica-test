@@ -171,14 +171,26 @@ class ParticipantService
      */
     public function deleteParticipant(int $id): array
     {
+        $exists = $this->participantInterface->findParticipant($id, 0);
+        if (!$exists) {
+            return [
+                'success' => false,
+                'data'    => "Not Found",
+                'code'    => 404,
+            ];
+        }
         $delete = $this->participantInterface->deleteParticipant($id);
         if (!$delete) {
             return [
                 'success' => false,
+                'data'    => "Server Error",
+                'code'    => 500,
             ];
         }
         return [
             'success' => true,
+            'data'    => "Data Deleted Successfully",
+            'code'    => 200,
         ];
     }
 }

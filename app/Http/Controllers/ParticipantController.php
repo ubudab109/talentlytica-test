@@ -92,7 +92,7 @@ class ParticipantController extends BaseController
     {
         $deleted = $this->services->deleteParticipant($id);
         if(!$deleted['success']) {
-            return $this->sendError('Failed', $deleted['message']);
+            return $this->sendError('Failed', $deleted['data'], $deleted['code']);
         }
         return $this->sendResponse('Success', 'Data Deleted Successfully');
     }
