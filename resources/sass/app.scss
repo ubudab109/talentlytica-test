@@ -1,0 +1,17 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-vue/dist/bootstrap-vue.css";
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+@import "~sweetalert2/src/sweetalert2";
+
+.float-right {
+  float: right !important;
+}
