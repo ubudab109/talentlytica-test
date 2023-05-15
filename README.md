@@ -45,4 +45,5 @@
 - Admin (username: admin, password: admin)
 - User (username: user, password: user)
 
-
+## API DOCUMENTATION (POSTMAN)
+### Import this file to Postman: https://drive.google.com/file/d/1nuo9YilPEucH46B9BBCadFx7HUatjnyQ/view?usp=share_link
